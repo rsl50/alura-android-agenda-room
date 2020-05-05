@@ -24,6 +24,7 @@ public class ListaAlunosView {
         this.adapter = new ListaAlunosAdapter(this.context);
         dao = Room
                 .databaseBuilder(context, AgendaDatabase.class, "agenda.db")
+                .allowMainThreadQueries()
                 .build()
                 .getRoomAlunoDAO();
     }
