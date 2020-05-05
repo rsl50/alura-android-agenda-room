@@ -9,7 +9,6 @@ import android.widget.EditText;
 
 import br.com.alura.agenda.R;
 import br.com.alura.agenda.dao.AlunoDAO;
-import br.com.alura.agenda.dao.AlunoDAOLowLevel;
 import br.com.alura.agenda.model.Aluno;
 
 import static br.com.alura.agenda.ui.activity.ConstantesActivities.CHAVE_ALUNO;
@@ -21,8 +20,7 @@ public class FormularioAlunoActivity extends AppCompatActivity {
     private EditText campoNome;
     private EditText campoTelefone;
     private EditText campoEmail;
-    //private final AlunoDAO dao = new AlunoDAO();
-    private final AlunoDAOLowLevel dao = new AlunoDAOLowLevel(this, "agenda", null, 1);
+    private final AlunoDAO dao = new AlunoDAO();
     private Aluno aluno;
 
     @Override

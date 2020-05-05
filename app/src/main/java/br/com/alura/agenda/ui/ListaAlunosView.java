@@ -7,20 +7,19 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 
 import br.com.alura.agenda.dao.AlunoDAO;
-import br.com.alura.agenda.dao.AlunoDAOLowLevel;
 import br.com.alura.agenda.model.Aluno;
 import br.com.alura.agenda.ui.adapter.ListaAlunosAdapter;
 
 public class ListaAlunosView {
 
     private final ListaAlunosAdapter adapter;
-    private final AlunoDAOLowLevel dao;
+    private final AlunoDAO dao;
     private final Context context;
 
     public ListaAlunosView(Context context) {
         this.context = context;
         this.adapter = new ListaAlunosAdapter(this.context);
-        this.dao = new AlunoDAOLowLevel(context, "agenda", null, 1);
+        this.dao = new AlunoDAO();
     }
 
     public void confirmaRemocao(final MenuItem item) {
