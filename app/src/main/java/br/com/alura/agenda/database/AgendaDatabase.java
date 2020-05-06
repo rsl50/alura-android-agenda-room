@@ -28,6 +28,7 @@ public abstract class AgendaDatabase extends RoomDatabase {
                     instance = Room
                             .databaseBuilder(context, AgendaDatabase.class, NOME_BANCO_DE_DADOS)
                             .allowMainThreadQueries()
+                            .fallbackToDestructiveMigration() // Destrói o database e recria sua estrutura, usar apenas em teste sem uso do usuário
                             .build();
                 }
             }
