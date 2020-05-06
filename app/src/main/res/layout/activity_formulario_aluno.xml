@@ -19,7 +19,7 @@
             android:importantForAutofill="no"
             tools:targetApi="o" />
 
-        <EditText
+        <!-- <EditText
             android:id="@+id/activity_formulario_aluno_sobrenome"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -27,7 +27,7 @@
             android:hint="@string/sobrenome"
             android:inputType="textCapWords"
             android:importantForAutofill="no"
-            tools:targetApi="o" />
+            tools:targetApi="o" /> -->
 
         <EditText
             android:id="@+id/activity_formulario_aluno_telefone"
