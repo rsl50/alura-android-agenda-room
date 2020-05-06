@@ -8,7 +8,7 @@ import java.util.List;
 import br.com.alura.agenda.model.Aluno;
 
 // [CLASSE_OBSOLETA] ESTA CLASSE NÃO É MAIS USADA NO PROJETO
-public class AlunoDAO {
+class AlunoDAO {
 
     private final static List<Aluno> alunos = new ArrayList<>();
 

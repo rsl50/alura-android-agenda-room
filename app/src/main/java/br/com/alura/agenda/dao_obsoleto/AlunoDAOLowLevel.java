@@ -12,7 +12,7 @@ import java.util.List;
 import br.com.alura.agenda.model.Aluno;
 
 // [CLASSE_OBSOLETA] ESTA CLASSE NÃO É MAIS USADA NO PROJETO, EXEMPLO DE USO DO SQLITE "NA MÃO", SEM UTILIZAR O ROOM
-public class AlunoDAOLowLevel extends SQLiteOpenHelper {
+class AlunoDAOLowLevel extends SQLiteOpenHelper {
 
     public AlunoDAOLowLevel(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
         super(context, name, factory, version);
