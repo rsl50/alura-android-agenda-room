@@ -1,4 +1,4 @@
-package br.com.alura.agenda.dao;
+package br.com.alura.agenda.dao_obsoleto;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -11,6 +11,7 @@ import java.util.List;
 
 import br.com.alura.agenda.model.Aluno;
 
+// [CLASSE_OBSOLETA] ESTA CLASSE NÃO É MAIS USADA NO PROJETO, EXEMPLO DE USO DO SQLITE "NA MÃO", SEM UTILIZAR O ROOM
 public class AlunoDAOLowLevel extends SQLiteOpenHelper {
 
     public AlunoDAOLowLevel(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {

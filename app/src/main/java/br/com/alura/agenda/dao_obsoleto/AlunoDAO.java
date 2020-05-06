@@ -1,4 +1,4 @@
-package br.com.alura.agenda.dao;
+package br.com.alura.agenda.dao_obsoleto;
 
 import android.support.annotation.Nullable;
 
@@ -7,6 +7,7 @@ import java.util.List;
 
 import br.com.alura.agenda.model.Aluno;
 
+// [CLASSE_OBSOLETA] ESTA CLASSE NÃO É MAIS USADA NO PROJETO
 public class AlunoDAO {
 
     private final static List<Aluno> alunos = new ArrayList<>();
