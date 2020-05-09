@@ -4,6 +4,8 @@ import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.ForeignKey;
 import android.arch.persistence.room.PrimaryKey;
 
+import static android.arch.persistence.room.ForeignKey.CASCADE;
+
 @Entity
 public class Telefone {
 
@@ -15,8 +17,8 @@ public class Telefone {
             entity = Aluno.class,
             parentColumns = "id",
             childColumns = "alunoId",
-            onUpdate = ForeignKey.CASCADE,
-            onDelete = ForeignKey.CASCADE
+            onUpdate = CASCADE,
+            onDelete = CASCADE
     )
     //@ColumnInfo(name="aluno_id")// permite alterar o nome da coluna no banco
     private int alunoId;
