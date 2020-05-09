@@ -6,6 +6,7 @@ import android.support.annotation.NonNull;
 
 import java.io.Serializable;
 import java.util.Calendar;
+import java.util.List;
 
 @Entity
 public class Aluno implements Serializable {
@@ -13,19 +14,14 @@ public class Aluno implements Serializable {
     @PrimaryKey(autoGenerate = true)
     private int id = 0;
     private String nome;
-    private String telefoneFixo;
-    private String telefoneCelular;
     private String email;
+    private List<Telefone> telefones;
 
     //@Ignore // Com essa abordagem, o atributo não será persistido no SQLite, portanto, não é necessário a implementação de um conversor e migration.
     private Calendar momentoDeCadastro = Calendar.getInstance();
 
     public void setNome(String nome) {
         this.nome = nome;
-    }
-
-    public void setTelefoneFixo(String telefoneFixo) {
-        this.telefoneFixo = telefoneFixo;
     }
 
     public void setEmail(String email) {
@@ -36,10 +32,6 @@ public class Aluno implements Serializable {
         return nome;
     }
 
-    public String getTelefoneFixo() {
-        return telefoneFixo;
-    }
-
     public String getEmail() {
         return email;
     }
@@ -47,7 +39,7 @@ public class Aluno implements Serializable {
     @NonNull
     @Override
     public String toString() {
-        return nome + " - " + telefoneFixo;
+        return nome;
     }
 
     public void setId(int id) {
@@ -70,11 +62,11 @@ public class Aluno implements Serializable {
         this.momentoDeCadastro = momentoDeCadastro;
     }
 
-    public String getTelefoneCelular() {
-        return telefoneCelular;
+    public List<Telefone> getTelefones() {
+        return telefones;
     }
 
-    public void setTelefoneCelular(String telefoneCelular) {
-        this.telefoneCelular = telefoneCelular;
+    public void setTelefones(List<Telefone> telefones) {
+        this.telefones = telefones;
     }
 }
