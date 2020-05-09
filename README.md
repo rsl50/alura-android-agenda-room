@@ -18,3 +18,26 @@ https://cursos.alura.com.br/course/android-room
 * Finalizando o CRUD
 * Implementando migrations
 * Peculiaridades do SQLite
+
+
+Curso de Android Room parte 2: Operações assíncronas
+---------
+<img src="https://www.alura.com.br/assets/api/cursos/android-room-operacoes-assincronas.svg" data-canonical-src="https://www.alura.com.br/assets/api/cursos/android-room-operacoes-assincronas.svg" width="150" height="150" />
+
+https://cursos.alura.com.br/course/android-room
+
+## Faça esse curso de Android e:
+* Aprenda a criar relacionamento entre entidades
+* Aplique passos necessários em migrations que envolve relaciomentos
+* Crie queries personalizadas que envolvam junções e filtros
+* Implemente operações assíncronas com AsyncTask
+* Entenda os problemas comuns com operações assíncronas dentro do Android Framework
+* Crie AsyncTasks genéricas
+
+## Aulas
+* Conhecendo as opções de armazenamento
+* Suportando mais de um telefoneFixo
+* Implementando relacionamento entre entidades
+* Integrando formulário com novo relacionamento
+* Executando operações assíncronas
+* Migrando o formulário para assíncrono

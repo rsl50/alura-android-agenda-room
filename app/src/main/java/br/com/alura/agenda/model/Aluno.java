@@ -13,34 +13,19 @@ public class Aluno implements Serializable {
     @PrimaryKey(autoGenerate = true)
     private int id = 0;
     private String nome;
-    //private String sobrenome;
-    private String telefone;
+    private String telefoneFixo;
+    private String telefoneCelular;
     private String email;
 
     //@Ignore // Com essa abordagem, o atributo não será persistido no SQLite, portanto, não é necessário a implementação de um conversor e migration.
     private Calendar momentoDeCadastro = Calendar.getInstance();
 
-    /*@Ignore
-    public Aluno(String nome, String telefone, String email) {
-        this.nome = nome;
-        this.telefone = telefone;
-        this.email = email;
-    }
-
-    public Aluno() {
-
-    }*/
-
     public void setNome(String nome) {
         this.nome = nome;
     }
 
-    /*public void setSobrenome(String sobrenome) {
-        this.sobrenome = sobrenome;
-    }*/
-
-    public void setTelefone(String telefone) {
-        this.telefone = telefone;
+    public void setTelefoneFixo(String telefoneFixo) {
+        this.telefoneFixo = telefoneFixo;
     }
 
     public void setEmail(String email) {
@@ -51,12 +36,8 @@ public class Aluno implements Serializable {
         return nome;
     }
 
-    /*public String getSobrenome() {
-        return sobrenome;
-    }*/
-
-    public String getTelefone() {
-        return telefone;
+    public String getTelefoneFixo() {
+        return telefoneFixo;
     }
 
     public String getEmail() {
@@ -66,7 +47,7 @@ public class Aluno implements Serializable {
     @NonNull
     @Override
     public String toString() {
-        return nome + " - " + telefone;
+        return nome + " - " + telefoneFixo;
     }
 
     public void setId(int id) {
@@ -81,10 +62,6 @@ public class Aluno implements Serializable {
         return id > 0;
     }
 
-    /*public String getNomeCompleto() {
-        return nome;// + " " + sobrenome;
-    }*/
-
     public Calendar getMomentoDeCadastro() {
         return momentoDeCadastro;
     }
@@ -93,8 +70,11 @@ public class Aluno implements Serializable {
         this.momentoDeCadastro = momentoDeCadastro;
     }
 
-    /*public String dataFormatada() {
-        SimpleDateFormat formatador = new SimpleDateFormat("dd/MM/yyyy");
-        return formatador.format(momentoDeCadastro.getTime());
-    }*/
+    public String getTelefoneCelular() {
+        return telefoneCelular;
+    }
+
+    public void setTelefoneCelular(String telefoneCelular) {
+        this.telefoneCelular = telefoneCelular;
+    }
 }
