@@ -13,7 +13,8 @@ import br.com.alura.agenda.model.Aluno;
 @Dao
 public interface AlunoDAO {
     @Insert
-    void salva (Aluno aluno);
+    Long salva (Aluno aluno);
+    //usar o retorno long permite receber do Room o Id gerado
 
     @Query("SELECT * FROM Aluno")
     List<Aluno> todos();

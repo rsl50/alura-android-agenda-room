@@ -20,11 +20,11 @@ public class ListaAlunosAdapter extends BaseAdapter {
 
     private final List<Aluno> alunos = new ArrayList<>();
     private final Context context;
-    private final TelefoneDAO dao;
+    private final TelefoneDAO telefoneDAO;
 
     public ListaAlunosAdapter(Context context) {
         this.context = context;
-        dao = AgendaDatabase.getInstance(context).getTelefoneDAO();
+        telefoneDAO = AgendaDatabase.getInstance(context).getTelefoneDAO();
     }
 
     @Override
@@ -54,8 +54,10 @@ public class ListaAlunosAdapter extends BaseAdapter {
         TextView nome = view.findViewById(R.id.item_aluno_nome);
         nome.setText(aluno.getNome());
         TextView telefone = view.findViewById(R.id.item_aluno_telefone);
-        Telefone primeiroTelefone = dao.buscaPrimeiroTelefoneDoAluno(aluno.getId());
-        telefone.setText(primeiroTelefone.getNumero());
+        Telefone primeiroTelefone = telefoneDAO.buscaPrimeiroTelefoneDoAluno(aluno.getId());
+        if (primeiroTelefone != null){
+            telefone.setText(primeiroTelefone.getNumero());
+        }
     }
 
     private View criaView(ViewGroup viewGroup) {
