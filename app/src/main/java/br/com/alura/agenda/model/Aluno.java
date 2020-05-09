@@ -14,7 +14,6 @@ public class Aluno implements Serializable {
     private int id = 0;
     private String nome;
     private String email;
-
     //@Ignore // Com essa abordagem, o atributo não será persistido no SQLite, portanto, não é necessário a implementação de um conversor e migration.
     private Calendar momentoDeCadastro = Calendar.getInstance();
 
