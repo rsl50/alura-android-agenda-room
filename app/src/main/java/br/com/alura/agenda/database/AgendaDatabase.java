@@ -23,6 +23,7 @@ public abstract class AgendaDatabase extends RoomDatabase {
     private static final String NOME_BANCO_DE_DADOS = "agenda.db";
 
     public abstract AlunoDAO getRoomAlunoDAO();
+    public abstract TelefoneDAO getTelefoneDAO();
 
     // Método que centraliza a criação da instância da classe facilitando seu reuso
     public static AgendaDatabase getInstance(Context context) {
@@ -43,6 +44,4 @@ public abstract class AgendaDatabase extends RoomDatabase {
         }
         return instance;
     }
-
-    public abstract TelefoneDAO getTelefoneDAO();
 }
