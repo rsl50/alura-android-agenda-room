@@ -11,6 +11,7 @@ import android.widget.EditText;
 import java.util.List;
 
 import br.com.alura.agenda.R;
+import br.com.alura.agenda.asynctask.SalvaAlunoTask;
 import br.com.alura.agenda.database.AgendaDatabase;
 import br.com.alura.agenda.database.dao.AlunoDAO;
 import br.com.alura.agenda.database.dao.TelefoneDAO;
@@ -101,7 +102,6 @@ public class FormularioAlunoActivity extends AppCompatActivity {
         } else {
             salvaAluno(telefoneFixo, telefoneCelular);
         }
-        finish();
     }
 
     @NonNull
@@ -111,9 +111,8 @@ public class FormularioAlunoActivity extends AppCompatActivity {
     }
 
     private void salvaAluno(Telefone telefoneFixo, Telefone telefoneCelular) {
-        int alunoId = alunoDAO.salva(aluno).intValue();
-        vinculaAlunoComTelefone(alunoId, telefoneFixo, telefoneCelular);
-        telefoneDAO.salva(telefoneFixo, telefoneCelular);
+        new SalvaAlunoTask(alunoDAO, aluno, telefoneFixo, telefoneCelular, telefoneDAO, this::finish).execute();
+        //o formulário só será fechado após o aluno ter sido salvo mantendo a integridade da lista de alunos
     }
 
     private void editaAluno(Telefone telefoneFixo, Telefone telefoneCelular) {
