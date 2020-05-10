@@ -12,7 +12,7 @@ public class BuscaTodosTelefonesDoAlunoTask extends AsyncTask<Void, Void, List<T
 
     private final TelefoneDAO dao;
     private final Aluno aluno;
-    private TelefonesDoAlunoEncontradosListener listener;
+    private final TelefonesDoAlunoEncontradosListener listener;
 
     public BuscaTodosTelefonesDoAlunoTask(TelefoneDAO telefoneDAO,
                                           Aluno aluno,

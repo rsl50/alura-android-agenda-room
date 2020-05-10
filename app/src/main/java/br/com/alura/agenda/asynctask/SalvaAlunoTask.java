@@ -14,11 +14,11 @@ public class SalvaAlunoTask extends AsyncTask<Void, Void, Void> {
     private final Telefone telefoneFixo;
     private final Telefone telefoneCelular;
     private final TelefoneDAO telefoneDAO;
-    private quandoAlunoSalvoListener listener;
+    private final AlunoSalvoListener listener;
 
     public SalvaAlunoTask(AlunoDAO alunoDAO, Aluno aluno,
                           Telefone telefoneFixo, Telefone telefoneCelular,
-                          TelefoneDAO telefoneDAO, quandoAlunoSalvoListener listener) {
+                          TelefoneDAO telefoneDAO, AlunoSalvoListener listener) {
         this.alunoDAO = alunoDAO;
         this.aluno = aluno;
         this.telefoneFixo = telefoneFixo;
@@ -48,7 +48,7 @@ public class SalvaAlunoTask extends AsyncTask<Void, Void, Void> {
         }
     }
 
-    public interface quandoAlunoSalvoListener{
+    public interface AlunoSalvoListener {
         void quandoSalvo();
     }
 }

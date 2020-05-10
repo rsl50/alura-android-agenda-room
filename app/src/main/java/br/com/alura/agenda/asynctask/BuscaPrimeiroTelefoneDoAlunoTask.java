@@ -9,7 +9,7 @@ public class BuscaPrimeiroTelefoneDoAlunoTask extends AsyncTask<Void, Void, Tele
 
     private final TelefoneDAO dao;
     private final int alunoId;
-    private PrimeiroTelefoneEncontradoListener listener;
+    private final PrimeiroTelefoneEncontradoListener listener;
 
     public BuscaPrimeiroTelefoneDoAlunoTask(TelefoneDAO dao,
                                             int alunoId,
