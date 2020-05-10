@@ -11,6 +11,7 @@ import android.widget.EditText;
 import java.util.List;
 
 import br.com.alura.agenda.R;
+import br.com.alura.agenda.asynctask.BuscaTodosTelefonesDoAlunoTask;
 import br.com.alura.agenda.asynctask.SalvaAlunoTask;
 import br.com.alura.agenda.database.AgendaDatabase;
 import br.com.alura.agenda.database.dao.AlunoDAO;
@@ -81,14 +82,16 @@ public class FormularioAlunoActivity extends AppCompatActivity {
     }
 
     private void preencheCamposDeTelefone() {
-        telefonesDoAluno = telefoneDAO.buscaTodosTelefonesDoAluno(aluno.getId());
-        for (Telefone telefone: telefonesDoAluno) {
-            if (telefone.getTipo() == TipoTelefone.FIXO){
-                campoTelefoneFixo.setText(telefone.getNumero());
-            } else {
-                campoTelefoneCelular.setText(telefone.getNumero());
+        new BuscaTodosTelefonesDoAlunoTask(telefoneDAO, aluno, telefones -> {
+            this.telefonesDoAluno = telefones;
+            for (Telefone telefone: telefonesDoAluno) {
+                if (telefone.getTipo() == TipoTelefone.FIXO){
+                    campoTelefoneFixo.setText(telefone.getNumero());
+                } else {
+                    campoTelefoneCelular.setText(telefone.getNumero());
+                }
             }
-        }
+        }).execute();
     }
 
     private void finalizaFormulario() {
